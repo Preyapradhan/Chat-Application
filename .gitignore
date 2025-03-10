@@ -1,0 +1,4 @@
+.env
+firebaseConfig.js
+cloudinaryConfig.js
+node_modules/

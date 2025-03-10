@@ -1,0 +1,47 @@
+
+$text-color: #ffffff;
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1px 10px;
+  background: none; // Matching gradient background
+  color: $text-color;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  
+  .logo {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .username {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  .icon {
+    font-size: 22px;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: #0047ab;
+    }
+  }
+
+}
