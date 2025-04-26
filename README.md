@@ -1,6 +1,6 @@
 # 💬 Chat Application - Real-Time Messaging App (React + Firebase)
 
-A fully functional real-time chat application built with **React** and **Firebase**, featuring sleek UI components, responsive design, and support for real-time communication between users. Perfect for personal messaging, team chats, or as a foundation for more advanced communication platforms.
+A fully functional real-time chat application built with **React** and **Firebase**, featuring sleek UI components, responsive design, and support for real-time communication between users. Perfect for personal messaging, as a foundation for more advanced communication platforms.
 
 ![Chat Application Banner](https://github.com/user-attachments/assets/a7fa9a02-5b67-4ad8-861c-ece1acfa8d13?auto=format&fit=crop&q=80&w=800)
 
@@ -11,14 +11,12 @@ A fully functional real-time chat application built with **React** and **Firebas
 - 🧑‍🤝‍🧑 Support for multiple users and chat rooms
 - 🗂️ Display all active users and recent messages in the sidebar
 - 👤 User profile with avatar and last message shown
-- 🤖 AI Chatbot support with smart replies
-- 📱 Fully responsive, modern UI inspired by WhatsApp
+- 📱 Fully responsive, modern UI 
 
 ## 🛠️ Tech Stack
 
 - **Frontend:**
   - React 18
-  - Tailwind CSS
   - React Router DOM
   - Zustand (state management)
   - Lucide React (icons)
@@ -27,14 +25,15 @@ A fully functional real-time chat application built with **React** and **Firebas
   - Firebase Firestore (real-time database)
   - Firebase Auth (user authentication)
   - Firebase Storage (for profile images, if used)
+  - Cloudinary (third-party platform for media library)
 
 ## 🧠 Features in Detail
 
 - 🔄 Real-time synchronization with Firestore
-- 🤖 Integrated intelligent chatbot for automated responses
 - 👥 Sidebar with all user contacts and their last message
 - 🖼️ Avatar support during sign-up/login
-- 🧭 Navigation with dynamic chat room routing
+- 🧭 Navigation with dynamic chat room routing 
+- 🗂️ Handling media library through third-party platform
 
 ## 🚀 Getting Started
 
@@ -88,6 +87,7 @@ src/
 ## 🙏 Acknowledgments
 
 - Firebase for the backend services
+- Cloudinary for Multi-media Library
 - Lucide React for icons
 - UI design inspired by popular chat applications
 
