@@ -51,30 +51,31 @@ npm install
 3. **Set up Firebase**
 - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
 - Enable Firestore, Authentication (Email/Password or Google), and Firebase Storage
-- Add your Firebase config to `.env`:
+- Add your Firebase config and Cloudinary config to `.env`:
 ```env
-VITE_API_KEY=your_api_key
-VITE_AUTH_DOMAIN=your_auth_domain
-VITE_PROJECT_ID=your_project_id
-VITE_STORAGE_BUCKET=your_storage_bucket
-VITE_MESSAGING_SENDER_ID=your_sender_id
-VITE_APP_ID=your_app_id
+FIREBASE_API_KEY=your_api_key
+FIREBASE_AUTH_DOMAIN=your_auth_domain
+FIREBASE_PROJECT_ID=your_project_id
+FIREBASE_STORAGE_BUCKET=your_storage_bucket
+FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+FIREBASE_APP_ID=your_app_id
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_secret_key
+CLOUDINARY_URL=your_cloudinary_url
 ```
 
 4. **Start the development server**
 ```bash
-npm run dev
+npm start
 ```
 
 ## 📁 Project Structure
 
 ```
 src/
-├── components/       # Reusable components (Message, Sidebar, Navbar, etc.)
-├── pages/            # ChatRoom and Auth pages
-├── store/            # Zustand store
-├── lib/              # Firebase utilities and helpers
-└── assets/           # Avatars and static media
+├── components/       # Reusable components (Message, Sidebar, Navbar,ChatRoom and Auth pages etc.)
+├── firebaseconfig.js # Firebase utilities and helpers
+└── public/images     # Avatars and static media
 ```
 
 ## 📦 Additional Features
