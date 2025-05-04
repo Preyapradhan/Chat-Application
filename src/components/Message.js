@@ -3,7 +3,7 @@ import "../styles/message.scss";
 import moment from "moment";
 
 const Message = ({ msg, currentUser }) => {
-  const isOwnMessage = msg.userId === currentUser.uid;
+  const isOwnMessage = msg.senderId === currentUser.uid;
 
   return (
     <div className={`message ${isOwnMessage ? "own" : "other"}`}>
@@ -34,6 +34,13 @@ const Message = ({ msg, currentUser }) => {
           <audio controls className="message-audio">
             <source src={msg.fileUrl} type="audio/mpeg" />
           </audio>
+        )}
+        
+        {/* Other File Types */}
+        {msg.fileType === "file" && msg.fileUrl && (
+          <a href={msg.fileUrl} target="_blank" rel="noopener noreferrer" className="message-file">
+            📎 Download File
+          </a>
         )}
 
         <p className="timestamp">

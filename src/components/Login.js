@@ -10,12 +10,13 @@ const Login = () => {
   const [avatar, setAvatar] = useState(null);
   const [isRegistering, setIsRegistering] = useState(false);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false); // Loading state
   const navigate = useNavigate();
 
   const uploadToCloudinary = async (file) => {
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("upload_preset", "ml_default"); // Replace with your Cloudinary preset
+    formData.append("upload_preset", "ml_default"); // Ensure this preset exists in your Cloudinary account
 
     try {
       const res = await fetch("https://api.cloudinary.com/v1_1/dvljtzv4r/image/upload", {
@@ -26,14 +27,15 @@ const Login = () => {
       return data.secure_url; // Return Cloudinary URL
     } catch (error) {
       console.error("Cloudinary upload error:", error);
+      setError("Failed to upload image. Please try again."); // User-friendly error message
       return null;
     }
   };
-  
 
   const handleAuth = async (e) => {
     e.preventDefault();
     setError("");
+    setLoading(true); // Set loading state
 
     try {
       if (isRegistering) {
@@ -51,6 +53,8 @@ const Login = () => {
       navigate("/chat");
     } catch (error) {
       setError(error.message);
+    } finally {
+      setLoading(false); // Reset loading state
     }
   };
 
@@ -90,7 +94,9 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <button type="submit">{isRegistering ? "Register" : "Login"}</button>
+          <button type="submit" disabled={loading}>
+            {loading ? "Processing..." : (isRegistering ? "Register" : "Login")}
+          </button>
         </form>
         <p onClick={() => setIsRegistering(!isRegistering)}>
           {isRegistering ? "Already have an account? Login" : "Create an account"}
