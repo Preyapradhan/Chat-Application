@@ -4,108 +4,107 @@ A fully functional real-time chat application built with **React** and **Firebas
 
 ![Chat Application Banner](https://github.com/user-attachments/assets/a7fa9a02-5b67-4ad8-861c-ece1acfa8d13?auto=format&fit=crop&q=80&w=800)
 
-## 🚀 Features
+## Features
 
-- 💬 Real-time messaging powered by Firebase
-- 🔐 Secure user authentication (email/password or Google sign-in)
-- 🧑‍🤝‍🧑 Support for multiple users and chat rooms
-- 🗂️ Display all active users and recent messages in the sidebar
-- 👤 User profile with avatar and last message shown
-- 📱 Fully responsive, modern UI 
+- **Real-time Messaging**: Send and receive messages instantly.
+- **Group Chats**: Create and participate in group conversations.
+- **File Sharing**: Share images, audio, and other files.
+- **User Management**: Block users, update profile pictures, and export chat history.
+- **Responsive Design**: Optimized for various screen sizes.
 
-## 🛠️ Tech Stack
+## Technologies Used
 
-- **Frontend:**
-  - React 18
-  - React Router DOM
-  - Zustand (state management)
-  - Lucide React (icons)
+### Frontend
+- **React**: A JavaScript library for building user interfaces.
+- **React Router**: For navigation and routing between pages.
+- **Lucide-React**: Icon library for UI components.
+- **SCSS**: For styling the application with modular and reusable styles.
 
-- **Backend:**
-  - Firebase Firestore (real-time database)
-  - Firebase Auth (user authentication)
-  - Firebase Storage (for profile images, if used)
-  - Cloudinary (third-party platform for media library)
+### Backend
+- **Firebase Firestore**: A NoSQL cloud database for storing user and message data.
+- **Firebase Authentication**: For user authentication and session management.
 
-## 🧠 Features in Detail
+### Cloud Services
+- **Cloudinary**: For uploading and managing media files like images and audio.
 
-- 🔄 Real-time synchronization with Firestore
-- 👥 Sidebar with all user contacts and their last message
-- 🖼️ Avatar support during sign-up/login
-- 🧭 Navigation with dynamic chat room routing 
-- 🗂️ Handling media library through third-party platform
+### Other Tools
+- **Axios**: For making HTTP requests to Cloudinary.
+- **Git**: Version control system for managing code changes.
 
-## 🚀 Getting Started
-
-1. **Clone the repository**
-```bash
-git clone https://github.com/Preyapradhan/Chat-Application.git
-cd Chat-Application
-```
-
-2. **Install dependencies**
-```bash
-npm install
-```
-
-3. **Set up Firebase**
-- Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
-- Enable Firestore, Authentication (Email/Password or Google), and Firebase Storage
-- Add your Firebase config and Cloudinary config to `.env`:
-```env
-FIREBASE_API_KEY=your_api_key
-FIREBASE_AUTH_DOMAIN=your_auth_domain
-FIREBASE_PROJECT_ID=your_project_id
-FIREBASE_STORAGE_BUCKET=your_storage_bucket
-FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-FIREBASE_APP_ID=your_app_id
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_secret_key
-CLOUDINARY_URL=your_cloudinary_url
-```
-
-4. **Start the development server**
-```bash
-npm start
-```
-
-## 📁 Project Structure
+## Project Structure
 
 ```
-src/
-├── components/       # Reusable components (Message, Sidebar, Navbar,ChatRoom and Auth pages etc.)
-├── firebaseconfig.js # Firebase utilities and helpers
-└── public/images     # Avatars and static media
+chat-app/
+├── src/
+│   ├── components/
+│   │   ├── ChatRoom.js       # Main chat interface
+│   │   ├── Sidebar.js        # Sidebar for user and group selection
+│   │   ├── Message.js        # Component for displaying individual messages
+│   │   ├── Groups.js         # Component for managing group chats
+│   ├── styles/
+│   │   ├── chatroom.scss     # Styles for the chatroom
+│   │   ├── sidebar.scss      # Styles for the sidebar
+│   │   ├── message.scss      # Styles for messages
+│   │   ├── groups.scss       # Styles for group management
+│   ├── firebaseConfig.js     # Firebase configuration
+│   ├── App.js                # Main application entry point
+├── package.json              # Project dependencies
 ```
 
-## 📦 Additional Features
+## Installation
 
-- 👀 Real-time typing indicators (optional)
-- 🌙 Dark mode support (optional)
-- 📎 File/image attachment support (extendable)
-- 🔔 Notification support (extendable)
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Preyapradhan/Chat-Application.git
+   cd Chat-Application
+   ```
 
-## 🙏 Acknowledgments
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-- Firebase for the backend services
-- Cloudinary for Multi-media Library
-- Lucide React for icons
-- UI design inspired by popular chat applications
+3. Set up Firebase:
+   - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/).
+   - Enable Firestore and Authentication.
+   - Replace the contents of `firebaseConfig.js` with your Firebase configuration.
 
-## 🖼️ Chat Application Images
+4. Set up Cloudinary:
+   - Create a Cloudinary account at [Cloudinary](https://cloudinary.com/).
+   - Replace `CLOUDINARY_PRESET` and `CLOUDINARY_UPLOAD_URL` in `ChatRoom.js` with your Cloudinary details.
 
-![Screenshot 2025-03-31 110502](https://github.com/user-attachments/assets/f4edc610-69bd-4bb0-b5c7-2465e6cf50c0)
+5. Start the development server:
+   ```bash
+   npm start
+   ```
+
+## Usage
+
+- **Login**: Authenticate using Firebase Authentication.
+- **Chat**: Select a user or group from the sidebar to start chatting.
+- **File Sharing**: Use the attachment icons to upload and share files.
+- **Profile Picture**: Update your profile picture by clicking on the avatar.
+- **Export Chat**: Export chat history as a `.txt` file.
+
+## Screenshots
+
+### Chat Interface
+![Screenshot 2025-05-04 193019](https://github.com/user-attachments/assets/a709fd80-0b5b-4338-8cb6-21b69c004742)
 
 
-![Screenshot 2025-03-31 110526](https://github.com/user-attachments/assets/93015090-f31c-4330-9a77-698c992076e5)
+### Group Chat
+
+![Screenshot 2025-05-04 193545](https://github.com/user-attachments/assets/ced03b84-9643-4a30-84a8-52ddcae72c89)
+
+![Screenshot 2025-05-04 193205](https://github.com/user-attachments/assets/1374ae84-79fd-4b7b-9fe6-14f348d9213f)
 
 
-![Screenshot 2025-04-02 153148](https://github.com/user-attachments/assets/967c2b16-ecab-40ec-8f77-721cec20c5c6)
+### File Sharing
+![Screenshot 2025-05-04 193239](https://github.com/user-attachments/assets/6a291684-85a8-462b-9180-258eeb6a1928)
 
 
-![Screenshot 2025-04-02 153231](https://github.com/user-attachments/assets/b03d3eb8-b09a-463b-ac95-733509e772d1)
+## Acknowledgments
 
-
-![Screenshot 2025-04-02 153218](https://github.com/user-attachments/assets/97992477-2fd3-4d36-8098-e9a57924cd74)
-
-
+- [Firebase](https://firebase.google.com/)
+- [Cloudinary](https://cloudinary.com/)
+- [Lucide Icons](https://lucide.dev/)
